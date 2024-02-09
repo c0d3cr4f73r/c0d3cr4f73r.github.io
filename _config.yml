@@ -22,7 +22,7 @@ title: c0d3cr4f73r's Blog
 email: c0d3cr4f73r@gmail.com
 author: c0d3cr4f73r
 description: >- # this means to ignore newlines until "baseurl:"
-  DevOps and AppSec Practitioner
+  Red Team Operator | Malware Analyst
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://c0d3cr4f73r.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: c0d3cr4f73r
