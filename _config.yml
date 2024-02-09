@@ -18,16 +18,16 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Rayhan0x01's Blog
-email: rayhan0x01@gmail.com
-author: Rayhan0x01
+title: c0d3cr4f73r's Blog
+email: c0d3cr4f73r@gmail.com
+author: c0d3cr4f73r
 description: >- # this means to ignore newlines until "baseurl:"
   DevOps and AppSec Practitioner
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://rayhan0x01.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: rayhan0x01
-github_username:  rayhan0x01
-google_analytics: UA-174977747-1
+url: "https://c0d3cr4f73r.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: c0d3cr4f73r
+github_username:  c0d3cr4f73r
+google_analytics: #U
 
 # Build settings
 theme: jekyll-theme-hacker
@@ -38,7 +38,7 @@ plugins:
   - jekyll-paginate
   - jekyll-seo-tag
 
-repository: rayhan0x01/rayhan0x01.github.io
+repository: c0d3cr4f73r/c0d3cr4f73r.github.io
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
