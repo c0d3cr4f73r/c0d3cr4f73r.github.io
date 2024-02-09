@@ -1,0 +1,35 @@
+---
+layout: default
+---
+
+<ul>
+  {% for post in site.posts %}
+    <li class="post-container">
+    	<div class="post-holder">
+    		<div class="post-thumb">
+		    	{% if post.thumbnail %}
+				<img src="{{ post.thumbnail }}">
+				{% else %}
+				<img src="/img/default-thumb.webp">
+				{% endif %}
+			</div>
+			{% if post.external_url %}
+			<div class="post-contents">
+				<small>{{ post.date | date: "%-d %B %Y" }} | <a href="{{ post.external_url }}" style="margin-left: 3px;">external post - {{post.external_site | replace:'https://',''}} <img src="/assets/images/link-icon.svg" style="width: 15px; margin-left: 3px"></a></small>
+      			<a href="{{ post.external_url }}" target="_blank" rel="noopener"><h2>{{ post.title }}</h2></a>
+      			<p>{{ post.excerpt }}</p>
+      		</div>
+			{% else %}
+			<div class="post-contents">
+				<small>{{ post.date | date: "%-d %B %Y" }}</small>
+      			<a href="{{ post.url }}" target="_blank" rel="noopener noreferrer"><h2>{{ post.title }}</h2></a>
+      			<p>{{ post.excerpt }}</p>
+      		</div>
+			{% endif %}
+    </li>
+  {% endfor %}
+</ul>
+
+<hr>
+
+{% include archive.html %}

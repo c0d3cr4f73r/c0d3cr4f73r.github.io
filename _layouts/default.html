@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+    <link rel="icon" href="/img/favicon.png" sizes="any">
+    {% if site.tags == "" %}
+      {% include collecttags.html %}
+    {% endif %}
+    {% if page.external_url %}
+    <link rel="canonical" href="{{ page.external_url }}">
+    {% else %}
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+    <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
+    {% endif %}
+{% seo %}
+<meta name="google-site-verification" content="XADhY2kHDRxnYk86XPkcc90r7h5R1oIpdk4vC0MsuzE" />
+{% if page.thumbnail %}
+    <meta property="og:image" content="{{site.url}}{{ page.thumbnail }}" />
+    {% endif %}
+    {% if page.robots %}
+    <meta name="robots" content="{{page.robots}}">
+    {% endif %}
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-TTN25NB');</script>
+      <!-- End Google Tag Manager -->
+  </head>
+
+  <body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TTN25NB"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <header>
+      <div class="container">
+        <a id="a-title" class="a-title-overwrite" href="{{ '/' | relative_url }}">
+          <h1>{{ site.title | default: site.github.repository_name }}</h1>
+        </a>
+        <h2>{{ site.description | default: site.github.project_tagline }}</h2>
+        <div class="main-header">
+          <div id="social-holder">
+            <a class="social-icons" href="https://twitter.com/Rayhan0x01" target="_blank"><img alt="Twitter" src="/assets/images/twitter.png"></a>
+            <a class="social-icons" href="https://www.linkedin.com/in/rayhan0x01/" target="_blank"><img alt="Linkedin" src="/assets/images/linkedin.png"></a>
+            <a class="social-icons" href="mailto:rayhan0x01@gmail.com" target="_blank"><img alt="Email" src="/assets/images/email.png"></a>
+            <a class="social-icons" href="https://www.hackthebox.eu/profile/60115" target="_blank"><img alt="HackTheBox" src="/assets/images/htb.png"></a>
+            
+            <a class="social-icons" href="https://github.com/rayhan0x01" target="_blank"><img alt="Github" src="/assets/images/github.png"></a>
+          </div>
+          <div id="page-list">
+            <a href="/about" target="_blank">About Me</a> | <a href="/tags" target="_blank">Tags Archive</a> | <a href="/feed.xml" target="_blank">Feed</a>
+          </div>
+        </div>
+        
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        {{ content }}
+      </section>
+    </div>
+
+    {% if site.google_analytics %}
+      <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', '{{ site.google_analytics }}', 'auto');
+        ga('send', 'pageview');
+      </script>
+    {% endif %}
+    <footer>
+      <div class="container" id="footer">
+        &lt;/> with 💚 by rayhan0x01
+      </div>
+    </footer>
+  </body>
+</html>
