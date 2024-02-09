@@ -3,8 +3,8 @@
 '''
 tag_generator.py
 
-Copyright 2017 Long Qian
-Contact: lqian8@jhu.edu
+Copyright 2017 c0d3cr4f73r
+Contact: c0d3cr4f73r@gmail.com
 
 This script creates tags for your Jekyll blog hosted by Github page.
 No plugins required.
