@@ -45,8 +45,4 @@ document.addEventListener('DOMContentLoaded', function() {
     link.textContent = heading.textContent;
     link.href = '#' + heading.id;
     listItem.appendChild(link);
-    currentList.appendChild(listItem);
-
-    previousLevel = level;
-  });
-});
+    currentLis
