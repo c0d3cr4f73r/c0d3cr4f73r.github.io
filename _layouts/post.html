@@ -5,9 +5,9 @@ layout: default
 <style>
   #nav-panel {
     position: fixed;
-    top: 200px; /* Adjust this value based on your header height */
-    right: 20px; /* Adjust this value to add a gap from the right side */
-    width: 250px; /* Adjust the width as needed */
+    top: 200px;
+    right: 20px;
+    width: 250px;
     padding-top: 20px;
   }
 
@@ -19,6 +19,11 @@ layout: default
   #nav-panel li {
     margin-bottom: 10px;
   }
+
+  #nav-panel a {
+    color: #333; /* Adjust the color as needed */
+    text-decoration: none;
+  }
 </style>
 
 <small>{{ page.date | date: "%-d %B %Y" }}</small>
@@ -26,19 +31,13 @@ layout: default
 
 <div class="container">
   <div class="row">
-    <div class="col-md-9">
+    <div class="col-md-9" id="content">
       {{ content }}
     </div>
     <div class="col-md-3">
       <!-- Navigation Panel -->
       <div id="nav-panel" class="well">
-        <ul class="nav nav-pills nav-stacked" data-spy="affix" data-offset-top="200">
-          <!-- Add your navigation links here -->
-          <li><a href="#box-info">Box Info</a></li>
-          <li><a href="#recon">Recon</a></li>
-          <li><a href="#vsftpd-exploit">VSFTPD Exploit</a></li>
-          <!-- Add more links as needed -->
-        </ul>
+        <ul id="auto-nav" class="nav nav-pills nav-stacked" data-spy="affix" data-offset-top="200"></ul>
       </div>
     </div>
   </div>
@@ -66,3 +65,5 @@ layout: default
     {% endfor %}
   ]</span>
 {% endif %}
+
+<script src="{{ '/assets/js/script.js' | relative_url }}"></script>
