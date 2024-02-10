@@ -1,11 +1,18 @@
-document.addEventListener("DOMContentLoaded", function () {
-  var sections = document.querySelectorAll("section[id^='section-']");
-  var navList = document.getElementById("nav-panel").querySelector("ul");
+document.addEventListener('DOMContentLoaded', function () {
+  const contentElement = document.getElementById('content');
+  const navElement = document.getElementById('auto-nav');
 
-  sections.forEach(function (section) {
-    var sectionTitle = section.querySelector("h2").textContent;
-    var navItem = document.createElement("li");
-    navItem.innerHTML = '<a href="#' + section.id + '">' + sectionTitle + '</a>';
-    navList.appendChild(navItem);
+  const headings = contentElement.querySelectorAll('h2, h3, h4'); // Add more heading levels if needed
+
+  headings.forEach(function (heading) {
+    const link = document.createElement('a');
+    link.textContent = heading.textContent;
+    link.href = '#' + heading.id;
+    link.classList.add('nav-link');
+
+    const listItem = document.createElement('li');
+    listItem.appendChild(link);
+
+    navElement.appendChild(listItem);
   });
 });
