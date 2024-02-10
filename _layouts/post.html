@@ -5,7 +5,25 @@ layout: default
 <small>{{ page.date | date: "%-d %B %Y" }}</small>
 <h1>{{ page.title }}</h1>
 
-{{content}}
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <!-- Navigation Panel -->
+      <div id="nav-panel" class="well">
+        <ul class="nav nav-pills nav-stacked" data-spy="affix" data-offset-top="200">
+          <!-- Add your navigation links here -->
+          <li><a href="#box-info">Box Info</a></li>
+          <li><a href="#recon">Recon</a></li>
+          <li><a href="#vsftpd-exploit">VSFTPD Exploit</a></li>
+          <!-- Add more links as needed -->
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-9">
+      {{ content }}
+    </div>
+  </div>
+</div>
 
 {% if page.external_url %}
 <p id="notice"></p>
