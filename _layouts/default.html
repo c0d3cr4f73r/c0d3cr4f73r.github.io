@@ -15,13 +15,13 @@
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
     <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
     {% endif %}
-{% seo %}
-<meta name="google-site-verification" content="XADhY2kHDRxnYk86XPkcc90r7h5R1oIpdk4vC0MsuzE" />
-{% if page.thumbnail %}
-    <meta property="og:image" content="{{site.url}}{{ page.thumbnail }}" />
+    {% seo %}
+    <meta name="google-site-verification" content="XADhY2kHDRxnYk86XPkcc90r7h5R1oIpdk4vC0MsuzE" />
+    {% if page.thumbnail %}
+      <meta property="og:image" content="{{site.url}}{{ page.thumbnail }}" />
     {% endif %}
     {% if page.robots %}
-    <meta name="robots" content="{{page.robots}}">
+      <meta name="robots" content="{{page.robots}}">
     {% endif %}
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -35,6 +35,7 @@
   <body>
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TTN25NB"
       height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
     <header>
       <div class="container">
         <a id="a-title" class="a-title-overwrite" href="{{ '/' | relative_url }}">
@@ -47,22 +48,41 @@
             <a class="social-icons" href="https://www.linkedin.com/in/c0d3cr4f73r/" target="_blank"><img alt="Linkedin" src="/assets/images/linkedin.png"></a>
             <a class="social-icons" href="mailto:c0d3cr4f73r@gmail.com" target="_blank"><img alt="Email" src="/assets/images/email.png"></a>
             <a class="social-icons" href="https://www.hackthebox.eu/profile/" target="_blank"><img alt="HackTheBox" src="/assets/images/htb.png"></a>
-            
             <a class="social-icons" href="https://github.com/c0d3cr4f73r" target="_blank"><img alt="Github" src="/assets/images/github.png"></a>
           </div>
           <div id="page-list">
             <a href="/about" target="_blank">About Me</a> | <a href="/tags" target="_blank">Tags Archive</a> | <a href="/feed.xml" target="_blank">Feed</a>
           </div>
         </div>
-        
       </div>
     </header>
 
-    <div class="container">
-      <section id="main_content">
-        {{ content }}
-      </section>
-    </div>
+    {% if page.layout == "post" %}
+      <!-- Display the navigation panel only for blog posts -->
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <div id="nav-panel" class="well">
+              <ul class="nav nav-pills nav-stacked" data-spy="affix" data-offset-top="200">
+                <!-- Navigation links will be dynamically added here -->
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-9">
+            <section id="main_content">
+              {{ content }}
+            </section>
+          </div>
+        </div>
+      </div>
+    {% else %}
+      <!-- Display normal content for other pages -->
+      <div class="container">
+        <section id="main_content">
+          {{ content }}
+        </section>
+      </div>
+    {% endif %}
 
     {% if site.google_analytics %}
       <script>
@@ -74,6 +94,7 @@
         ga('send', 'pageview');
       </script>
     {% endif %}
+
     <footer>
       <div class="container" id="footer">
         &lt;/> with 💚 by c0d3cr4f73r
