@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
   var content = document.getElementById('main_content');
-  var headings = content.querySelectorAll('h3, h4, h5, h6');
+  var headings = content.querySelectorAll('h1, h2, h3, h4, h5, h6');
   var navPanel = document.createElement('div');
   navPanel.id = 'nav-panel';
   document.body.appendChild(navPanel);
@@ -20,6 +20,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Exclude headings with the title and blog name
     if (heading.textContent === document.title || heading.textContent === '{{ site.title | default: site.github.repository_name }}') {
+      return;
+    }
+
+    // Exclude headings within the header section
+    if (heading.closest('header') !== null) {
       return;
     }
 
