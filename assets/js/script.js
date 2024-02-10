@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var level = parseInt(heading.tagName.charAt(1));
 
     // Exclude specific headings
-    var excludeHeadings = ["c0d3cr4f73r's Blog", "Red Team Operator | Malware Analyst"];
+    var excludeHeadings = ["c0d3cr4f73r's Blog", "Red Team Operator | Malware Analyst", "Tags :"];
     if (excludeHeadings.includes(heading.textContent.trim())) {
       return;
     }
