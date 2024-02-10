@@ -13,13 +13,13 @@ document.addEventListener('DOMContentLoaded', function() {
   headings.forEach(function(heading) {
     var level = parseInt(heading.tagName.charAt(1));
 
-    // Exclude headings outside of the content section
-    if (!content.contains(heading)) {
+    // Exclude specific headings
+    if (heading.textContent.includes("c0d3cr4f73r's Blog") || heading.textContent.includes("Red Team Operator | Malware Analyst")) {
       return;
     }
 
-    // Exclude headings with the title and blog name
-    if (heading.textContent === document.title || heading.textContent === '{{ site.title | default: site.github.repository_name }}') {
+    // Exclude headings outside of the content section
+    if (!content.contains(heading)) {
       return;
     }
 
