@@ -2,6 +2,25 @@
 layout: default
 ---
 
+<style>
+  #nav-panel {
+    position: fixed;
+    top: 50px; /* Adjust this value based on your header height */
+    left: 0;
+    width: 250px; /* Adjust the width as needed */
+    padding-top: 20px;
+  }
+
+  #nav-panel ul {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  #nav-panel li {
+    margin-bottom: 10px;
+  }
+</style>
+
 <small>{{ page.date | date: "%-d %B %Y" }}</small>
 <h1>{{ page.title }}</h1>
 
