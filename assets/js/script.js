@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
-  var headings = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
+  var content = document.getElementById('main_content');
+  var headings = content.querySelectorAll('h1, h2, h3, h4, h5, h6');
   var navPanel = document.createElement('div');
   navPanel.id = 'nav-panel';
   document.body.appendChild(navPanel);
@@ -11,6 +12,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
   headings.forEach(function(heading) {
     var level = parseInt(heading.tagName.charAt(1));
+
+    // Exclude headings outside of the content section
+    if (!content.contains(heading)) {
+      return;
+    }
 
     if (level > previousLevel) {
       var sublist = document.createElement('ul');
