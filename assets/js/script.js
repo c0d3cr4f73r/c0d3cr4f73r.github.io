@@ -18,6 +18,11 @@ document.addEventListener('DOMContentLoaded', function() {
       return;
     }
 
+    // Exclude headings with the title and blog name
+    if (heading.textContent === document.title || heading.textContent === '{{ site.title | default: site.github.repository_name }}') {
+      return;
+    }
+
     if (level > previousLevel) {
       var sublist = document.createElement('ul');
       var listItem = document.createElement('li');
